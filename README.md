@@ -6,8 +6,8 @@ Maintenance and Notification app for the Mozilla Project
 Built On
 --------
 
-[Playdoh][gh-playdoh]
-[Django][django]
+* [Playdoh][gh-playdoh]
+* [Django][django]
 
 [django]: http://www.djangoproject.com/
 [gh-playdoh]: https://github.com/mozilla/playdoh
