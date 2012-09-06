@@ -3,7 +3,7 @@ import os
 from setuptools import setup, find_packages
 
 
-setup(name='WhistlePig',
+setup(name='whistlepig',
       version='1.0',
       description='Django application.',
       long_description='',
