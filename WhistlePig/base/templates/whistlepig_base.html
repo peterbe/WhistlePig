@@ -6,11 +6,78 @@
 
     {% block site_css %}
       {% compress css %}
-      <link href="{{ static('whistlepig/css/main.less') }}" type="text/less" rel="stylesheet">
+      <link href="{{ static('whistlepig/css/whistlepig.less') }}" type="text/less" rel="stylesheet">
       {% endcompress %}
     {% endblock %}
+
+    <!--[if lt IE 9]>
+      <script src={{ static('/whistlepig/js/libs/html5shiv.js') }}></script>
+    <![endif]-->
   </head>
-  <body>
-    {% block content %}{% endblock %}
+  <body id="sandstone" class="sand">
+    <div id="outer-wrapper">
+      <div id="wrapper">
+        {% block site_header %}
+        <header id="masthead">
+          <a href="http://www.mozilla.org/" id="tabzilla">{{ _('Mozilla') }}</a>
+
+          {% block site_header_nav %}
+          <nav id="nav-main" role="navigation">
+              <ul>
+                  <li><a href="//mozilla.org/mission/">{{_('Mission')}}</a></li>
+                  <li><a href="//mozilla.org/about/">{{_('About')}}</a></li>
+                  <li><a href="//mozilla.org/products/">{{_('Products')}}</a></li>
+                  <li><a href="//mozilla.org/contribute/">{{_('Get Involved')}}</a></li>
+              </ul>
+          </nav>
+          {% endblock %}
+
+          {% block site_header_logo %}
+          <h2><a href="//mozilla.org/"><img src="{{ static('sandstone/header-mozilla-stone.png') }}" alt="mozilla"></a></h2>
+          {% endblock %}
+        </header>
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+      </div>
+      {% block site_footer %}
+        <footer id="colophon">
+        <div class="row">
+
+          <div class="footer-logo">
+              <a href="//mozilla.org/"><img src="{{ static('sandstone/footer-mozilla.png') }}" alt="mozilla"></a>
+          </div>
+
+          <div class="footer-license">
+              <p>
+                {% trans url='/foundation/licensing/website-content.html' %}
+                Portions of this content are ©1998–{{ current_year }} by individual
+                mozilla.org contributors. Content available under
+                a <a href="{{ url }}">Creative Commons license</a>.
+                {% endtrans %}
+              </p>
+              <p>
+                <a href="//mozilla.org/contribute/">{{_('Contribute to this page')}}</a>
+              </p>
+          </div>
+          <ul class="footer-nav">
+            <li><a href="//mozilla.org/about/contact.html#map-mountain_view">{{_('Contact Us')}}</a></li>
+            <li><a href="//mozilla.org/privacy-policy.html">{{_('Privacy Policy')}}</a></li>
+            <li><a href="//mozilla.org/about/legal.html">{{_('Legal Notices')}}</a></li>
+            <li><a href="//mozilla.org/legal/fraud-report/index.html">{{_('Report Trademark Abuse')}}</a></li>
+          </ul>
+
+          {% block social %}
+          <ul class="footer-nav">
+            <li><a href="http://twitter.com/firefox">{{_('Twitter')}}</a></li>
+            <li><a href="http://facebook.com/Firefox">{{_('Facebook')}}</a></li>
+            <li><a href="https://affiliates.mozilla.org/">{{_('Firefox Affiliates')}}</a></li>
+          </ul>
+          {% endblock %}
+
+      </div>
+      </footer>
+    {% endblock %}
+    </div>
   </body>
 </html>
