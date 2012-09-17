@@ -20,49 +20,85 @@
           </ul>
           <h2>Interact</h2>
           <ul>
-            <li>Add New Notification</li>
+            <!-- This list item below should only be rendered if a user is logged in -->
+            <li><a href="#add_notice" id="add-notification">Add New Notification</a></li>
             <li>RSS Feed</li>
           </ul>
         </aside>
       </section>
 
       <article id="top" class="announcements-panel span7">
-        <h1 class="period-header"><time datetime="">August 2012</time></h1>
+        <h1 class="period-header"><time datetime="2012-08-10T15:29:00">August 2012</time></h1>
         <section class="period-data emergency">
-          <h2>Vidyo Maintenance Notice</h2>
+          <h2>Vidyo Maintenance Notice <span class="bugzilla-id">(Bugzilla ID: <a href="">987567</a>)</span></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p><time datetime="">Time posted: August 10, 2012</time></p>
+          <p>Admin Assigned: Matthew Zeier <time datetime="2012-08-10T15:29:00">Time posted: August 10, 2012</time></p>
         </section>
-        <hr class="period-divider" />
+        <hr class="divider" />
+
         <section class="period-data no-downtime">
-          <h2>Vidyo Maintenance Notice</h2>
+          <h2>Vidyo Maintenance Notice <span class="bugzilla-id">(Bugzilla ID: <a href="">987567</a>)</span></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p><time datetime="">Time posted: August 10, 2012</time></p>
+          <p>Admin Assigned: Matthew Zeier <time datetime="2012-08-10T15:29:00">Time posted: August 10, 2012</time></p>
         </section>
-        <hr class="period-divider" />
-        <h1 class="period-header"><time datetime="">July 2012</time></h1>
+        <hr class="divider" />
+
+        <h1 class="period-header"><time datetime="2012-08-10T15:29:00">July 2012</time></h1>
         <section class="period-data downtime">
-          <h2>Vidyo Maintenance Notice</h2>
+          <h2>Vidyo Maintenance Notice <span class="bugzilla-id">(Bugzilla ID: <a href="">987567</a>)</span></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p><time datetime="">Time posted: August 10, 2012</time></p>
+          <p>Admin Assigned: Matthew Zeier <time datetime="2012-08-10T15:29:00">Time posted: August 10, 2012</time></p>
         </section>
-        <hr class="period-divider" />
+        <hr class="divider" />
       </article>
     </div>
   </div>
+<!-- This form below should only be rendered if a user is logged in -->
+<form name="addnotice" id="add_notice" action="/" method="post">
+  <fieldset>
+    <legend>Complete the information below to add an announcement</legend>
+
+    <div class="field">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" />
+    </div>
+
+    <div class="field">
+      <label for="description">Description</label>
+      <textarea cols="65" rows="15" id="description" name="description" placeholder="Enter short description of notice"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="bugzilla">BugzillaID:</label>
+      <input type="text" id="bugzilla" name="bugzilla" />
+    </div>
+
+    <div class="field">
+      <label for="admin-assigned">Admin Assigned:</label>
+      <input type="text" id="admin-assigned" name="admin-assigned" />
+    </div>
+
+    <div class="field">
+      <label for="time-window">Time Window:</label>
+      <input type="text" id="time-window" name="time-window" placeholder="ex. 2012-09-01" />
+    </div>
+
+    <input type="submit" class="button" name="submit-notice" value="Add Notice&nbsp;»" />
+  </fieldset>
+</form>
 {% endblock %}

@@ -1,8 +1,13 @@
 @import "sandstone/sandstone.less";
+@import "//www.mozilla.org/tabzilla/media/css/tabzilla.css";
 
+time {
+    display: block;
+}
 .announcements-panel,
 #sidebar {
     background-color: #fff;
+    .box-shadow;
 }
 #sidebar aside {
     padding: 10px;
@@ -13,9 +18,12 @@
     ul {
         margin: 0;
         padding: 0;
-        font-size: 13px;
+        font-size: 14px;
     }
     li {
+        margin: 15px 10px 15px 10px;
+        padding-left: 10px;
+        line-height: 80%;
         list-style: none;
     }
 }
@@ -29,7 +37,7 @@
         letter-spacing: normal;
     }
     h2 {
-        margin-bottom: -20px;
+        margin: 0 0 -20px 35px;
         font-size: 36px;
     }
 }
@@ -41,15 +49,21 @@
     letter-spacing: normal;
 }
 .period-data {
-    margin: 10px 10px 10px -10px;
-    padding: .5em .5em 0 .5em;
+    margin: 10px 10px 30px -10px;
+    padding: .5em .9em 0 .9em;
     h2 {
         font-size: 28px;
     }
 }
-.period-divider {
-    margin: 25px auto;
-    border-bottom: 1px solid #333;
+.bugzilla-id {
+    display: block;
+    font-size: 17px;
+}
+.divider {
+    background: transparent url(/static/divider.png) center top no-repeat;
+    margin: 0 auto;
+    padding: 10px;
+    border: 0;
     width: 90%;
 }
 .emergency {
@@ -60,4 +74,53 @@
 }
 .no-downtime {
     border-left: 10px solid green;
+}
+#add_notice {
+    display: none;
+    background-color: #fff;
+    padding: 15px;
+    border: 5px solid #333;
+    width: 650px;
+    legend {
+        margin-bottom: 8px;
+        font-size: 21px;
+    }
+    label {
+        display: block;
+        font-family: 'Open Sans Light', sans-serif;
+    }
+    input {
+        margin-top: 2px;
+        width: 232px;
+    }
+    .field {
+        margin-top: 10px;
+    }
+    input[type="submit"] {
+        margin-top: .7em;
+    }
+}
+/* simplebox css */
+#simplebox_wrapper {
+    background-color:#333;
+    background-color:rgba(51, 51, 51, 0.5);
+    background-color:hsla(0, 0%, 20%, 0.5);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:9999;
+}
+#close_simplebox {
+    position:absolute;
+    background:transparent url(/static/close_round.png) 0 0 no-repeat;
+    margin-top:-25px;
+    border:0;
+    width:30px;
+    height:30px;
+    text-indent:-99999em;
+    cursor:pointer;
+    cursor:hand;
+}
+.ie7 #close_simplebox {
+    margin-left:40em;
 }
