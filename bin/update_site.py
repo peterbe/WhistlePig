@@ -89,6 +89,7 @@ def update_site(env, debug):
         (CHDIR, os.path.join(here)),
         (EXEC, 'python2.6 vendor/src/schematic/schematic migrations/'),
         (EXEC, 'python2.6 manage.py collectstatic --noinput'),
+        (EXEC, 'python2.6 manage.py compress_jingo --force'),
         # un-comment if you haven't moved to django-compressor yet
         #(EXEC, 'python2.6 manage.py compress_assets'),
     ]
