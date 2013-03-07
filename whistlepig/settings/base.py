@@ -16,6 +16,7 @@ INSTALLED_APPS = list(INSTALLED_APPS) + [
     # Application base, containing global templates.
     '%s.base' % PROJECT_MODULE,
     '%s.whistlepig' % PROJECT_MODULE,
+    'jingo_offline_compressor',
 ]
 
 LOCALE_PATHS = (
